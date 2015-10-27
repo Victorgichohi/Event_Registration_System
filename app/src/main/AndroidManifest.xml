@@ -24,7 +24,7 @@
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
-            android:name=".event_key_detail"
+            android:name=".EventKeyDetail"
             android:label="@string/title_activity_event_key_detail"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
