@@ -2,7 +2,7 @@ package com.victor.m.eventregistrationsystem;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
+//import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,6 +16,7 @@ public class EventKeyDetail extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_key_detail);
 
+//        this just adds the id of the divs to be viewed from the xml file
         t1 = (TextView) findViewById(R.id.text1);
         t2 = (TextView) findViewById(R.id.text2);
         t3 = (TextView) findViewById(R.id.text3);
@@ -26,6 +27,7 @@ public class EventKeyDetail extends Activity {
         t8 = (TextView) findViewById(R.id.text8);
         t9 = (TextView) findViewById(R.id.text9);
 
+//        this sets the text clickable
         t1.setClickable(true);
         t2.setClickable(true);
         t3.setClickable(true);
@@ -36,11 +38,13 @@ public class EventKeyDetail extends Activity {
         t8.setClickable(true);
         t9.setClickable(true);
 
+//        this are the toasts to be viewed when one of the texts are clicked and is set for each text
         t1.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-
+//                generate the action toast with the text to be shown
+//                same thing happens for every button
                 Toast.makeText(getBaseContext(), "[0,0] Clicked",
                         Toast.LENGTH_SHORT).show();
             }
