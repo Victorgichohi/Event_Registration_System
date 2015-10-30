@@ -1,13 +1,11 @@
 package com.victor.m.eventregistrationsystem;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import static com.victor.m.eventregistrationsystem.R.layout.activity_event_key_detail;
 
 public class EventKeyDetail extends Activity {
 
@@ -16,7 +14,7 @@ public class EventKeyDetail extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(activity_event_key_detail);
+        setContentView(R.layout.activity_event_key_detail);
 
         t1 = (TextView) findViewById(R.id.text1);
         t2 = (TextView) findViewById(R.id.text2);
@@ -129,11 +127,13 @@ public class EventKeyDetail extends Activity {
         });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_main, menu);
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.activity_event_key_detail, menu);
+//        return true;
+//    }
 }
+
+
 
 
