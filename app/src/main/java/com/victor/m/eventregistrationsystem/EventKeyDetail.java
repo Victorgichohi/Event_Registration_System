@@ -1,20 +1,22 @@
-package balaji.gridlayout_static;
+package com.victor.m.eventregistrationsystem;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends Activity {
+import static com.victor.m.eventregistrationsystem.R.layout.activity_event_key_detail;
+
+public class EventKeyDetail extends Activity {
 
     TextView t1, t2, t3, t4, t5, t6, t7, t8, t9;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(activity_event_key_detail);
 
         t1 = (TextView) findViewById(R.id.text1);
         t2 = (TextView) findViewById(R.id.text2);
