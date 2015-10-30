@@ -1,5 +1,6 @@
 package com.victor.m.eventregistrationsystem;
 
+import android.content.ClipData;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ import android.widget.Toast;
  */
 public class MainActivity extends Activity {
     GridView gridView;
-    ArrayList<Item> gridArray = new ArrayList<Item>();
+    ArrayList<Item> gridArray = new ArrayList<ClipData.Item>();
     CustomGridViewAdapter customGridAdapter;
 
     @Override
