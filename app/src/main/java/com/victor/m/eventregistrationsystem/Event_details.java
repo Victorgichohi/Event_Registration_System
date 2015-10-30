@@ -1,29 +1,80 @@
-package com.victor.m.eventregistrationsystem;
+package com.example.androidhive;
 
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.content.Context;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.GridView;
+import android.widget.ImageView;
 
-public class Event_details extends AppCompatActivity {
+public class ImageAdapter extends BaseAdapter {
+    private Context mContext;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_event_details);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+    // Keep all Images in array
+    public Integer[] mThumbIds = {
+            R.drawable.pic_1, R.drawable.pic_2,
+            R.drawable.pic_3, R.drawable.pic_4,
+            R.drawable.pic_5, R.drawable.pic_6,
+            R.drawable.pic_7, R.drawable.pic_8,
+            R.drawable.pic_9, R.drawable.pic_10,
+            R.drawable.pic_11, R.drawable.pic_12,
+            R.drawable.pic_13, R.drawable.pic_14,
+            R.drawable.pic_15
+    };
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+    // Constructor
+    public ImageAdapter(Context c){
+        mContext = c;
     }
 
+    @Override
+    public int getCount() {
+        return mThumbIds.length;
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return mThumbIds[position];
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return 0;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ImageView imageView = new ImageView(mContext);
+        imageView.setImageResource(mThumbIds[position]);
+        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        imageView.setLayoutParams(new GridView.LayoutParams(70, 70));
+        return imageView;
+    }
+
+}
+
+6. Open your main activity class as shown below.
+        AndroidGridLayoutActivity.java
+        package com.example.androidhive;
+
+        import android.app.Activity;
+        import android.content.Intent;
+        import android.os.Bundle;
+        import android.view.View;
+        import android.widget.AdapterView;
+        import android.widget.AdapterView.OnItemClickListener;
+        import android.widget.GridView;
+
+public class AndroidGridLayoutActivity extends Activity {
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.grid_layout);
+
+        GridView gridView = (GridView) findViewById(R.id.grid_view);
+
+        // Instance of ImageAdapter Class
+        gridView.setAdapter(new ImageAdapter(this));
+    }
 }
